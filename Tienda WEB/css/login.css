@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-container{
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+/*aqui es donde arreglamos el logo para que se vea muñeco xd*/
+.login-logo-section{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-logo {
+    max-width: 100%;
+    height: auto;
+    width: 500px;
+    object-fit: contain;
+}
+
+/*Aqui es donde el formulario va para la derecha men xd*/
+.login-form-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    border: 3px solid #f27c22;
+    border-radius: 15px;
+    padding: 3rem 2.5rem;
+    width: 100%;
+    max-width: 450px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-title{
+    text-align: center;
+    font-size: 1.8rem;
+    color: #000;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.input-group label {
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    align-self: center;
+}
+
+.input-group input{
+    width: 90%;
+    padding: 0.6rem;
+    border: 1 solid #000;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #2862d9;
+    box-shadow: 0 0 5px rgba(40, 98, 217, 0.3);
+}
+
+.form-links {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-links p {
+    font-size: 0.85rem;
+    color: #333;
+    margin-bottom: 0.6rem;
+}
+
+.form-links a {
+    color: #2862d9;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.form-links a:hover {
+    color: #f27c22;
+}
+
+.btn-login {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    padding: 0.8rem 1rem;
+    background-color: #3b6dc7;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: inherit;
+}
+
+.btn-login:hover {
+    background-color: #2854a6;
+}
+
+@media (max-width: 850px) {
+    .login-container {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 4rem;
+    }
+
+    .login-logo {
+        width: 300px;
+        margin-bottom: 2rem;
+    }
+
+    .form-box {
+        padding: 2rem 1.5rem;
+    }
+}

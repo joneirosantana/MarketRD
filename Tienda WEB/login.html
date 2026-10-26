@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="icon" href="img/LogoIcon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Iniciar Sesión - MarketRD</title>
+    <script src="js/login.js" defer></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-logo-section">
+            <img src="img/LogoMarketRD.png" alt="Logo de MarketRD" class="login-logo" width="100" height="100">
+        </div>
+
+        <div class="login-form-section">
+            <div class="form-box">
+                <h2 class="form-title">Iniciar Sesión</h2>
+
+                <form action="#" method="POST">
+                    <div class="input-group">
+                        <label for="correo">Correo Electronico:</label>
+                        <input type="email" id="correo" name="correo" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" requirde>
+
+                    </div>
+
+                    <div class="form-links">
+                        <p>¿Olvidó su contraseña?<a href="#">Cambiala Aquí!</a></p>
+                        <p>¿No tienes una cuenta?<a href="#">¡Registrate aqui!</a></p>
+                    </div>
+
+                    <button type="submit" class="btn-login">Iniciar Sesion</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

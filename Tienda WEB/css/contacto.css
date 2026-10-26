@@ -1,0 +1,120 @@
+/* =========================================
+   CONTACTO - MarketRD
+   ========================================= */
+
+.contacto {
+    flex: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    width: 100%;
+}
+
+.contacto__title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin: 0 0 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.contacto__subtitle {
+    text-align: center;
+    color: #f1f1f1;
+    margin: 0 0 2.5rem;
+}
+
+.contacto__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Info */
+.contacto__info {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contacto__info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.contacto__info-item ion-icon {
+    font-size: 1.4rem;
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+/* Formulario */
+.contacto__form {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contacto__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.contacto__field label {
+    font-weight: 600;
+    color: #222;
+    font-size: 0.9rem;
+}
+
+.contacto__field input,
+.contacto__field textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.7rem 0.9rem;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    outline: none;
+    color: #222;
+    transition: border-color 0.2s ease;
+    resize: vertical;
+}
+
+.contacto__field input:focus,
+.contacto__field textarea:focus {
+    border-color: var(--color-primary);
+}
+
+.contacto__submit {
+    align-self: flex-start;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.contacto__status {
+    margin: 0.4rem 0 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.contacto__status--info    { color: #555; }
+.contacto__status--success { color: #1e8449; }
+.contacto__status--error   { color: #c0392b; }
+
+@media (max-width: 768px) {
+    .contacto__grid { grid-template-columns: 1fr; }
+    .contacto__title { font-size: 1.8rem; }
+    .contacto { padding: 2rem 1rem; }
+}

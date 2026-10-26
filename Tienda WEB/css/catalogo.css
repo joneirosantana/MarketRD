@@ -1,0 +1,227 @@
+/* =========================================
+   CATÁLOGO - MarketRD
+   Estilos específicos de catalogo.html
+   (requiere principal.css cargado antes)
+   ========================================= */
+
+/* ===== Header: iconos Ionicons ===== */
+ion-icon {
+    font-size: 1.2rem;
+    vertical-align: middle;
+    pointer-events: none;
+}
+
+.nav__caret {
+    font-size: 0.9rem;
+    margin-left: 2px;
+}
+
+.nav__toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: var(--color-text-dark);
+}
+
+.nav__toggle-icon {
+    font-size: 1.8rem;
+}
+
+.nav__link--cart {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+}
+
+.nav__link--ofertas ion-icon {
+    color: #c0392b;
+    font-size: 1.1rem;
+}
+
+/* ===== Header: desplegables ===== */
+.nav--main {
+    flex: 1;
+    justify-content: center;
+}
+
+.nav__item--dropdown {
+    position: relative;
+}
+
+.nav__link--dropdown,
+.nav__link--user {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.nav__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 190px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+    padding: 0.4rem 0;
+    margin: 0.4rem 0 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 200;
+}
+
+.nav__dropdown--right {
+    left: auto;
+    right: 0;
+}
+
+.nav__item--dropdown:hover > .nav__dropdown,
+.nav__item--dropdown:focus-within > .nav__dropdown,
+.nav__item--dropdown.is-open > .nav__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav__dropdown-link {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: #222;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav__dropdown-link:hover,
+.nav__dropdown-link:focus {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+/* ===== Controles del catálogo ===== */
+.products__controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.products__search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.products__search-icon {
+    position: absolute;
+    left: 0.9rem;
+    color: #888;
+    font-size: 1.1rem;
+    pointer-events: none;
+}
+
+.products__search,
+.products__select {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    outline: none;
+    background-color: #ffffff;
+    color: #222;
+    min-width: 240px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: border-color 0.2s ease;
+}
+
+.products__search {
+    padding-left: 2.4rem;
+}
+
+.products__search:focus,
+.products__select:focus {
+    border-color: var(--color-primary);
+}
+
+.products__no-results {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* ===== Responsive del header y controles ===== */
+@media (max-width: 1024px) {
+    .nav--main .nav__list { gap: 0.2rem; }
+    .nav__link { padding: 0.6rem 0.7rem; font-size: 0.9rem; }
+}
+
+@media (max-width: 768px) {
+    .nav__toggle {
+        display: flex;
+        order: 3;
+    }
+
+    .nav--main,
+    .nav--auth {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        background-color: #ffffff;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.5rem 1rem 1rem;
+        display: none;
+    }
+
+    .nav--main.is-open,
+    .nav--auth.is-open {
+        display: flex;
+    }
+
+    .nav--main .nav__list,
+    .nav--auth .nav__list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.2rem;
+    }
+
+    .nav__link {
+        width: 100%;
+        text-align: left;
+        padding: 0.8rem 0.6rem;
+    }
+
+    .nav__dropdown {
+        position: static;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        padding-left: 1rem;
+    }
+
+    .nav__item--dropdown.is-open > .nav__dropdown {
+        display: block;
+    }
+
+    .products__search,
+    .products__select {
+        min-width: 100%;
+    }
+}

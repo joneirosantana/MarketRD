@@ -1,0 +1,36 @@
+/* =========================================
+   OFERTAS - MarketRD
+   ========================================= */
+
+.card--oferta { position: relative; }
+
+.card__badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #c0392b;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.card__prices {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.card__price-old {
+    font-size: 0.85rem;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.card__price {
+    font-weight: 700;
+    color: var(--color-primary);
+    font-size: 1rem;
+}

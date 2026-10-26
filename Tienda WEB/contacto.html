@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/principal.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="icon" href="img/LogoIcon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Contacto - MarketRD</title>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="principal.html" class="header__logo-link">
+            <img src="img/LogoIcon.png" alt="Logo de MarketRD" class="logo__icon" width="50" height="50">
+            <span class="header__brand">MarketRD</span>
+        </a>
+
+        <nav class="nav nav--main">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="principal.html" class="nav__link">Inicio</a></li>
+                <li class="nav__item"><a href="catalogo.html" class="nav__link">Catálogo</a></li>
+                <li class="nav__item"><a href="principal.html#productos" class="nav__link">Productos</a></li>
+
+                <li class="nav__item nav__item--dropdown">
+                    <button class="nav__link nav__link--dropdown" type="button" aria-haspopup="true" aria-expanded="false">
+                        Categorías <ion-icon name="chevron-down-outline" class="nav__caret"></ion-icon>
+                    </button>
+                    <ul class="nav__dropdown">
+                        <li><a href="catalogo.html?cat=electrónica" class="nav__dropdown-link">Electrónica</a></li>
+                        <li><a href="catalogo.html?cat=hogar" class="nav__dropdown-link">Hogar</a></li>
+                        <li><a href="catalogo.html?cat=moda" class="nav__dropdown-link">Moda</a></li>
+                        <li><a href="catalogo.html?cat=deportes" class="nav__dropdown-link">Deportes</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav__item">
+                    <a href="ofertas.html" class="nav__link nav__link--ofertas">
+                        Ofertas <ion-icon name="flame-outline"></ion-icon>
+                    </a>
+                </li>
+                <li class="nav__item"><a href="nosotros.html" class="nav__link">Nosotros</a></li>
+                <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <nav class="nav nav--auth">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="carrito.html" class="nav__link nav__link--cart" aria-label="Carrito de compras">
+                        <ion-icon name="cart-outline"></ion-icon>
+                        <span class="nav__cart-count">0</span>
+                    </a>
+                </li>
+                <li class="nav__item nav__item--dropdown">
+                    <button class="nav__link nav__link--user" type="button" aria-haspopup="true" aria-expanded="false">
+                        <ion-icon name="person-outline"></ion-icon> Mi cuenta <ion-icon name="chevron-down-outline" class="nav__caret"></ion-icon>
+                    </button>
+                    <ul class="nav__dropdown nav__dropdown--right">
+                        <li><a href="login.html" class="nav__dropdown-link">Iniciar Sesión</a></li>
+                        <li><a href="registro.html" class="nav__dropdown-link">Registrarse</a></li>
+                        <li><a href="#" class="nav__dropdown-link">Mis pedidos</a></li>
+                        <li><a href="#" class="nav__dropdown-link">Favoritos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <button class="nav__toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+            <ion-icon name="menu-outline" class="nav__toggle-icon"></ion-icon>
+        </button>
+    </header>
+
+    <main class="contacto">
+        <h1 class="contacto__title">Contáctanos</h1>
+        <p class="contacto__subtitle">¿Tienes alguna duda o sugerencia? Escríbenos.</p>
+
+        <div class="contacto__grid">
+            <!-- Info de contacto -->
+            <aside class="contacto__info">
+                <div class="contacto__info-item">
+                    <ion-icon name="call-outline"></ion-icon>
+                    <span>+1 (829) 512-7273</span>
+                </div>
+                <div class="contacto__info-item">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <span>soportejbs@marketrd.com</span>
+                </div>
+                <div class="contacto__info-item">
+                    <ion-icon name="location-outline"></ion-icon>
+                    <span>Hato Mayor del Rey, República Dominicana</span>
+                </div>
+                <div class="contacto__info-item">
+                    <ion-icon name="time-outline"></ion-icon>
+                    <span>Lun - Vie: 8:00 AM - 8:00 PM<br>Sab: 8:00 AM - 12:00 PM</span>
+                </div>
+            </aside>
+
+            <!-- Formulario -->
+            <form class="contacto__form" id="contactForm" novalidate>
+                <div class="contacto__field">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" required minlength="3" placeholder="Tu nombre">
+                </div>
+
+                <div class="contacto__field">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com">
+                </div>
+
+                <div class="contacto__field">
+                    <label for="asunto">Asunto</label>
+                    <input type="text" id="asunto" name="asunto" required minlength="3" placeholder="Motivo del mensaje">
+                </div>
+
+                <div class="contacto__field">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required minlength="10" placeholder="Escribe tu mensaje..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn--primary contacto__submit">Enviar mensaje</button>
+                <p class="contacto__status" id="formStatus" role="status" hidden></p>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 MarketRD. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/api.js" defer></script>
+    <script src="js/contacto.js" defer></script>
+</body>
+</html>
