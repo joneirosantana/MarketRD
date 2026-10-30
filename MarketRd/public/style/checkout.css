@@ -1,0 +1,133 @@
+/* =========================================
+   CHECKOUT - MarketRD
+   Estilos que se acoplan al ritmo de principal.css
+   ========================================= */
+
+/* Rejilla para separar el formulario del resumen */
+.checkout-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem; /* Mismo gap que usa tu .products__grid */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Igualamos el estilo de las tarjetas a las de productos */
+.checkout-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: #222;
+    overflow: hidden;
+}
+
+.checkout-card__title {
+    font-size: 1.2rem;
+    color: #111;
+    margin: 0 0 1.5rem;
+    font-weight: 700;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.8rem;
+}
+
+/* Formulario */
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #444;
+}
+
+.form-group input {
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 0.7rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s ease;
+    color: #222;
+}
+
+.form-group input:focus {
+    border-color: var(--color-primary);
+}
+
+/* Botón de confirmar (hereda .btn y .btn--primary) */
+.checkout-btn-submit {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+/* Resumen */
+.checkout-card--resumen {
+    background: #f9fbfd; /* Un tono muy sutil para diferenciar */
+}
+
+.checkout-total {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.checkout-total__label {
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.checkout-total__value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.checkout-seguro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: #1e8449;
+    font-weight: 600;
+}
+
+/* Botón volver (hereda .btn y .btn--secondary que ya definimos antes) */
+.checkout-footer {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.checkout-footer .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Responsive al mismo ritmo de tu tienda */
+@media (max-width: 768px) {
+    .checkout-container {
+        grid-template-columns: 1fr;
+    }
+}

@@ -12,7 +12,7 @@ const totalGuardado = localStorage.getItem("totalCompra");
 
 totalCompra.textContent = totalGuardado || "0.00";
 
-formularioPago.addEventListener("submit", async function(event) {
+formularioPago.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const nombre = nombreCliente.value.trim();
@@ -35,12 +35,12 @@ formularioPago.addEventListener("submit", async function(event) {
             headers: {
                 "Content-Type": "application/json"
             },
-           body: JSON.stringify({
-    nombre: nombre,
-    direccion: direccion,
-    total: total,
-    productos: JSON.parse(localStorage.getItem("carrito") || "[]")
-         })
+            body: JSON.stringify({
+                nombre: nombre,
+                direccion: direccion,
+                total: total,
+                productos: JSON.parse(localStorage.getItem("carrito") || "[]")
+            })
         });
 
         const resultado = await respuesta.json();
@@ -50,17 +50,17 @@ formularioPago.addEventListener("submit", async function(event) {
             return;
         }
 
-        
-localStorage.setItem("totalPedidoConfirmado", total.toFixed(2));
 
-formularioPago.reset();
+        localStorage.setItem("totalPedidoConfirmado", total.toFixed(2));
 
-
-localStorage.setItem("carrito", "[]");
-localStorage.setItem("totalCompra", "0.00");
+        formularioPago.reset();
 
 
-window.location.href = "confirmacion.html";
+        localStorage.setItem("carrito", "[]");
+        localStorage.setItem("totalCompra", "0.00");
+
+
+        window.location.href = "confirmacion.html";
 
 
     } catch (error) {

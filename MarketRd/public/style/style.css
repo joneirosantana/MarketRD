@@ -1,255 +1,210 @@
-/* 
-   Style.css 
-   author: Manuel
-*/
+/* =========================================
+   CARRITO - MarketRD
+   Estilos para el HTML original (sin modificarlo)
+   ========================================= */
 
+/* ===== Base ===== */
 body {
-    background-color: #f0f0f0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    /* Si no cargas principal.css, esto asegura el fondo y la fuente */
+    background-color: var(--color-bg, #c1b5b5);
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
     margin: 0;
-    padding: 0;
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-header{
-    display: flex;
-    justify-content: flex-start;
+/* ===== Títulos ===== */
+h1 {
+    font-size: 2.2rem;
+    margin: 0 0 2rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+}
 
-    nav {
+h2 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+}
+
+#totalCarrito {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-left: 0.5rem;
+}
+
+/* ===== Tabla (Tarjeta principal) ===== */
+table {
+    width: 100%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    background-color: #ffffff; /* Tarjeta blanca */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 1rem;
+    
+    /* Anulamos el border="1" feo del HTML */
+    border: none !important; 
+}
+
+thead {
+    background-color: #0753d6; /* Azul de tu marca */
+}
+
+th {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 1.2rem 1rem;
+    text-align: left;
+    border: none;
+}
+
+td {
+    padding: 1.2rem 1rem;
+    text-align: left;
+    color: #222;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background-color: #f7f9ff;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ===== Enlaces y Botones ===== */
+/* Los enlaces (Continuar comprando / Finalizar compra) */
+a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    margin: 0.3rem;
+}
+
+a[href*="principal"] {
+    background-color: #ffffff;
+    color: #0753d6;
+    border: 2px solid #0753d6;
+}
+
+a[href*="principal"]:hover {
+    background-color: #0753d6;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+a[href*="checkout"] {
+    background-color: #0753d6;
+    color: #ffffff;
+    border: 2px solid #0753d6;
+}
+
+a[href*="checkout"]:hover {
+    background-color: #043ba0;
+    transform: translateY(-2px);
+}
+
+/* Botón Vaciar Carrito */
+#vaciarCarrito {
+    background-color: #c0392b; /* Rojo para acción destructiva */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 1rem 0.3rem 0;
+}
+
+#vaciarCarrito:hover {
+    background-color: #962d22;
+    transform: translateY(-2px);
+}
+
+/* Los <br> del HTML original (opcional, para darles aire en pantalla grande) */
+br {
+    display: block;
+    content: "";
+    margin: 0.5rem 0;
+}
+
+/* ===== Responsive (Igual que tu tienda) ===== */
+@media (max-width: 768px) {
+    body { padding: 2rem 1rem; }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.2rem; }
+
+    /* Convertimos la tabla en tarjetas apiladas en celular */
+    table, thead, tbody, tr, td, th {
+        display: block;
+        width: 100%;
+    }
+
+    thead { display: none; }
+
+    table {
+        background-color: transparent;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    tbody tr {
+        background-color: #ffffff;
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        padding: 0.5rem;
+    }
+
+    td {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        text-align: right;
+        padding: 0.8rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    td:last-child { border-bottom: none; }
+
+    /* Magia para que no tengas que poner data-label en el HTML:
+       usamos el texto del <th> correspondiente */
+    td:nth-of-type(1)::before { content: "Producto"; font-weight: 700; color: #555; }
+    td:nth-of-type(2)::before { content: "Precio"; font-weight: 700; color: #555; }
+    td:nth-of-type(3)::before { content: "Cantidad"; font-weight: 700; color: #555; }
+    td:nth-of-type(4)::before { content: "Subtotal"; font-weight: 700; color: #555; }
+    td:nth-of-type(5)::before { content: "Acción"; font-weight: 700; color: #555; }
+
+    a, #vaciarCarrito {
+        display: block;
         width: 100%;
-        padding: 0;
-        background-color: #333;
-
-        ul{
-            list-style: none;
-            display: flex;
-            margin: 0;
-            padding: 0;
-        }
-
-        a {
-            color: #fff;
-            text-decoration: none;
-            padding: 19px 20px;
-        }
-
-        a.active, a:focus,a:active, a:hover {
-            color: #fff;
-            background-color: #d3a62a;
-        }
-    }
-
-    nav.login {
-        justify-content: end;
-
-         a.active, a:focus,a:active, a:hover {
-            color: #fff;
-            background-color: #5caa33;
-        }
-
-          
-        li.login-link-text::after{
-            content: '|';
-            color: white;
-        }
-
-        li.login-link-text a{
-            padding-left: 35px; 
-        }
-
-        li.login-link 
-        img{
-            margin-right: -29px;
-            width: 23px;
-            height: 22px;
-            border-radius: 15px;
-            position: relative;
-            z-index: 99;
-        }
+        margin: 0.5rem 0;
     }
 }
-
-div.content{
-    max-width: 1100px;
-    margin: auto;
-
-    .card{
-        display: flex;
-        flex-direction: column;
-        background: #ededed;
-        border: 1px solid #e4e4e4;
-
-        img{
-            border-radius: 10px;
-            max-width: 325px;
-        }
-
-        h2{
-            margin-top: 0;
-        }
-
-        .card-content{
-            max-width: 480px;
-            text-align: left;   
-            padding: 10px;
-        }
-    }
-}
-
-.btn-group{
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-}
-
-.list{
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-footer{
-    background: #3e3e3e;
-    color: white;
-    padding: 1px;
-    text-align: center;
-    margin-top: 30px;
-} 
-
-.content-full-left-right {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.content-full-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:10px;
-}
-
-fieldset{
-    width: 600px;
-    background-color: #f8fffa;
-    padding: 15px;
-    margin-bottom: 25px;
-}
-
-fieldset legend{
-    font-size: 14px;
-    font-weight: bold;
-}
-
-fieldset input,fieldset select{
-    padding: 8px;
-    margin: 4px;
-    border:1px solid #CECECE;
-}
-
-.field-group-100{ 
-    border:1px solid #CECECE;
-    margin-bottom: 8px;
-    display: flex;
-    padding: 20px;
-}
-
-.field-group-50{ 
-    padding-right: 8px;
-}
-
-.mt-10{
-    margin-top: 10px;
-}
-
-div.btn-action{
-    display: block;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    text-align: right;
-}
-
-.btn{
-    cursor:pointer;
-    border:1px solid #CECECE;
-    background-color: rgb(198, 205, 198);
-    border-radius: 8px;
-    padding: 10px 20px;
-    color:white;
-    font-size: 14px;
-    text-decoration: none;
-    max-height: 37px;
-}
-
-.btn-primary{
-    background-color: rgb(33, 127, 49);
-    border:rgb(22, 144, 79);
-}
-
-.btn-primary:hover{
-    background-color: rgb(32, 159, 9);
-    border:rgb(34, 190, 10);
-}
-
-.btn-success{
-    background-color: rgb(47, 11, 255);
-    border:rgb(47, 15, 231);
-}
-
-.btn-success:hover{
-    background-color: rgb(40, 15, 184);
-    border:rgb(47, 15, 231);
-}
-
-.btn-danger{
-    background-color: rgb(255, 11, 11);
-    border:rgb(231, 51, 15);
-}
-
-.btn-danger:hover{
-    background-color: rgb(215, 9, 9);
-    border:rgb(231, 73, 15);
-}
-
-
-/* Estilos para el registro de MarketRD */
-
-.registro-container {
-    max-width: 450px;
-    margin: 40px auto;
-    padding: 25px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
-}
-
-.registro-container h1 {
-    text-align: center;
-    color: #333;
-}
-
-.registro-container p {
-    text-align: center;
-}
-
-.registro-container label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-.registro-container input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.registro-container button {
-    width: 100%;
-    margin-top: 20px;
-}
-

@@ -5,49 +5,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finalizar compra - MarketRD</title>
-    <link rel="stylesheet" href="style/style.css">
+    
+    <!-- Fuente y estilos base de tu tienda -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/principal.css">
+    <link rel="stylesheet" href="style/checkout.css">
+    
+    <!-- Ionicons -->
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
+    <!-- ===== Header (Igual a tu principal) ===== -->
+    <header class="header">
+        <a href="principal.html" class="header__logo-link">
+            <img src="img/LogoIcon.png" alt="Logo de MarketRD" class="logo__icon" width="50" height="50">
+            <span class="header__brand">MarketRD</span>
+        </a>
 
-    <h1>Finalizar compra - MarketRD</h1>
+        <nav class="nav nav--main">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="principal.html" class="nav__link">Inicio</a></li>
+                <li class="nav__item"><a href="catalogo.html" class="nav__link">Catálogo</a></li>
+                <li class="nav__item"><a href="principal.html#productos" class="nav__link">Productos</a></li>
+                <li class="nav__item">
+                    <a href="ofertas.html" class="nav__link nav__link--ofertas">
+                        Ofertas <ion-icon name="flame-outline"></ion-icon>
+                    </a>
+                </li>
+                <li class="nav__item"><a href="nosotros.html" class="nav__link">Nosotros</a></li>
+                <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+            </ul>
+        </nav>
 
-    <h2>Datos del cliente</h2>
+        <nav class="nav nav--auth">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="carrito.html" class="nav__link nav__link--cart">
+                        <ion-icon name="cart-outline"></ion-icon>
+                        <span class="nav__cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <h2>Resumen de la compra</h2>
+    <!-- ===== Checkout (Usando la misma clase .products de tu tienda para el ritmo) ===== -->
+    <main class="products" id="checkout">
+        <!-- Título idéntico al de tus secciones -->
+        <h1 class="products__title">Finalizar compra</h1>
+        <p class="products__subtitle">Completa tus datos para procesar el pedido</p>
 
-    <p>Total a pagar: RD$ <span id="totalCompra">0.00</span></p>
+        <!-- Contenedor con el mismo ancho y ritmo -->
+        <div class="checkout-container">
+            
+            <!-- Formulario en una tarjeta (igual que una .card) -->
+            <div class="card checkout-card">
+                <div class="card__body">
+                    <h2 class="checkout-card__title">Datos del cliente</h2>
+                    
+                    <form id="formularioPago" class="checkout-form">
+                        <div class="form-group">
+                            <label for="nombreCliente">Nombre completo:</label>
+                            <input type="text" id="nombreCliente" placeholder="Ej. Juan Pérez" required>
+                        </div>
 
-    <form id="formularioPago">
+                        <div class="form-group">
+                            <label for="correoCliente">Correo electrónico:</label>
+                            <input type="email" id="correoCliente" placeholder="tucorreo@ejemplo.com" required>
+                        </div>
 
-        <label for="nombreCliente">Nombre completo:</label>
-        <input type="text" id="nombreCliente" required>
+                        <div class="form-group">
+                            <label for="direccionCliente">Dirección de entrega:</label>
+                            <input type="text" id="direccionCliente" placeholder="Calle, número, sector..." required>
+                        </div>
 
-        <br><br>
+                        <div class="form-group">
+                            <label for="telefonoCliente">Teléfono:</label>
+                            <input type="tel" id="telefonoCliente" placeholder="Ej. 809-555-1234" required>
+                        </div>
 
-        <label for="correoCliente">Correo electrónico:</label>
-        <input type="email" id="correoCliente" required>
+                        <button type="submit" class="btn btn--primary checkout-btn-submit">
+                            Confirmar compra
+                        </button>
+                    </form>
+                </div>
+            </div>
 
-        <br><br>
+            <!-- Resumen en otra tarjeta -->
+            <div class="card checkout-card checkout-card--resumen">
+                <div class="card__body">
+                    <h2 class="checkout-card__title">Resumen de la compra</h2>
+                    
+                    <div class="checkout-total">
+                        <span class="checkout-total__label">Total a pagar:</span>
+                        <span class="checkout-total__value">RD$ <span id="totalCompra">0.00</span></span>
+                    </div>
 
-        <label for="direccionCliente">Dirección de entrega:</label>
-        <input type="text" id="direccionCliente" required>
+                    <div class="checkout-seguro">
+                        <ion-icon name="shield-checkmark-outline"></ion-icon>
+                        <span>Pago 100% seguro</span>
+                    </div>
+                </div>
+            </div>
 
-        <br><br>
+        </div>
 
-        <label for="telefonoCliente">Teléfono:</label>
-        <input type="tel" id="telefonoCliente" required>
+        <div class="checkout-footer">
+            <a href="carrito.html" class="btn btn--secondary">
+                <ion-icon name="arrow-back-outline"></ion-icon> Volver al carrito
+            </a>
+        </div>
+    </main>
 
-        <br><br>
+    <!-- ===== Footer (Igual a tu principal) ===== -->
+    <footer class="footer">
+        <p>&copy; 2024 MarketRD. Todos los derechos reservados.</p>
+    </footer>
 
-        <button type="submit">Confirmar compra</button>
-
-    </form>
-
-    <p><a href="carrito.html">Volver al carrito</a></p>
-
-    <script src="checkout.js"></script>
-
+    <script src="js/checkout.js"></script>
 </body>
 
 </html>
