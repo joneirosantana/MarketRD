@@ -75,3 +75,54 @@ formularioLogin.addEventListener("submit", async function (event) {
         console.error("Error al iniciar sesión:", error);
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modalPedirCorreo = document.getElementById("modalPedirCorreo");
+    const btnOlvidePassword = document.getElementById("btnOlvidePassword"); // El enlace en tu login
+    const formRecuperarCorreo = document.getElementById("formRecuperarCorreo");
+    const btnCerrar = modalPedirCorreo.querySelector(".modal__btn-cerrar");
+    
+    // Abrir modal
+    btnOlvidePassword?.addEventListener("click", (e) => {
+        e.preventDefault();
+        formRecuperarCorreo.reset();
+        modalPedirCorreo.classList.add("is-active");
+    });
+
+    // Cerrar modal
+    btnCerrar.addEventListener("click", () => {
+        modalPedirCorreo.classList.remove("is-active");
+    });
+
+    // Enviar correo al PHP y REDIRIGIR
+    formRecuperarCorreo?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const correo = document.getElementById("correoRecuperar").value.trim();
+        const btnSubmit = formRecuperarCorreo.querySelector("button[type='submit']");
+        
+        btnSubmit.disabled = true;
+        btnSubmit.textContent = "Enviando...";
+
+        try {
+            const respuesta = await fetch("recuperarPassword.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ correo: correo, accion: "solicitar_codigo" })
+            });
+            const resultado = await respuesta.json();
+
+            if (resultado.exito) {
+                // Si el correo existe, lo enviamos a la página con el diseño de tu imagen
+                // Pasamos el correo por la URL para saber a quién cambiarle la contraseña
+                window.location.href = `cambiar-password.html?correo=${encodeURIComponent(correo)}`;
+            } else {
+                alert(resultado.mensaje || "El correo no está registrado.");
+            }
+        } catch (error) {
+            alert("Error de conexión con el servidor.");
+        } finally {
+            btnSubmit.disabled = false;
+            btnSubmit.textContent = "Enviar código";
+        }
+    });
+});

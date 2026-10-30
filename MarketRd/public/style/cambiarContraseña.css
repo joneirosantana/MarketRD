@@ -1,0 +1,130 @@
+/* =========================================
+   PÁGINA CAMBIAR CONTRASEÑA - MarketRD
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffffff;
+    font-family: 'Montserrat', Arial, sans-serif;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Logo superior izquierdo */
+.header-logo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+/* Centrado del contenido */
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* La tarjeta con borde amarillo */
+.card-password {
+    width: 100%;
+    max-width: 500px;
+    border: 4px solid #f1c40f; /* Borde amarillo */
+    border-radius: 40px; /* Bordes muy redondeados */
+    padding: 3rem 3rem 4rem 3rem;
+    background-color: #ffffff;
+}
+
+.card-password__title {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 2rem;
+    text-decoration: underline; /* Subrayado rojo */
+    text-decoration-color: #e74c3c;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+}
+
+/* Formulario */
+.card-password__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    font-weight: 800; /* Negrita fuerte igual a la imagen */
+    color: #000;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #a0a0a0; /* Borde gris */
+    border-radius: 6px;
+    outline: none;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+.form-group input:focus {
+    border-color: #4472c4;
+}
+
+/* Botón Azul */
+.form-actions {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.btn-cambiar {
+    background-color: #4472c4; /* Azul de la imagen */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 3rem;
+    font-family: inherit;
+    font-size: 1.2rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-cambiar:hover {
+    background-color: #32599e;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .card-password {
+        padding: 2rem 1.5rem;
+    }
+    .header-logo {
+        position: static;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .main-container {
+        padding-top: 40px;
+    }
+}

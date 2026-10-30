@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Contraseña - MarketRD</title>
+    <link rel="stylesheet" href="style/cambiarContraseña.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Logo arriba a la izquierda -->
+    <header class="header-logo">
+        <a href="principal.html">
+            <img src="img/LogoMarketRD.png" alt="MarketRD" class="logo">
+        </a>
+    </header>
+
+    <!-- Contenedor principal centrado -->
+    <main class="main-container">
+        
+        <!-- La tarjeta con el borde amarillo de la imagen -->
+        <div class="card-password">
+            <h1 class="card-password__title">Cambiar Contraseña</h1>
+
+            <form id="formCambiarPassword" class="card-password__form">
+                <div class="form-group">
+                    <label for="codigoRecuperacion">Código:</label>
+                    <input type="text" id="codigoRecuperacion" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nuevaPassword">Contraseña nueva:</label>
+                    <input type="password" id="nuevaPassword" required minlength="6">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmarPassword">Confirmar Contraseña:</label>
+                    <input type="password" id="confirmarPassword" required minlength="6">
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-cambiar">Cambiar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Script conectado al PHP -->
+    <script src="js/cambiarContraseña.js"></script>
+</body>
+</html>

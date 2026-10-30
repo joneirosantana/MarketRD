@@ -34,8 +34,8 @@
                     </div>
 
                     <div class="form-links">
-                        <p>¿Olvidó su contraseña?<a href="#">Cambiala Aquí!</a></p>
-                        <p>¿No tienes una cuenta?<a href="#">¡Registrate aqui!</a></p>
+                        <p>¿Olvidó su contraseña?<a href="#" id="btnOlvidePassword">Cambiala Aquí!</a></p>
+                        <p>¿No tienes una cuenta?<a href="registrar_premium.html">¡Registrate aqui!</a></p>
                     </div>
 
                     <button type="submit" class="btn-login">Iniciar Sesion</button>
@@ -52,6 +52,24 @@
             <h3 class="modal__title" id="modalTitulo">Título</h3>
             <p class="modal__message" id="modalMensaje">Mensaje del modal.</p>
             <button type="button" class="modal__btn" id="modalBoton">Aceptar</button>
+        </div>
+    </div>
+    <!-- ===== Modal para pedir el correo ===== -->
+    <div class="modal" id="modalPedirCorreo">
+        <div class="modal__content">
+            <h3 class="modal__title">Recuperar Contraseña</h3>
+            <p class="modal__message">Ingresa tu correo electrónico para enviarte el código de recuperación.</p>
+
+            <form id="formRecuperarCorreo">
+                <div class="form-group">
+                    <label for="correoRecuperar">Correo electrónico:</label>
+                    <input type="email" id="correoRecuperar" required placeholder="tucorreo@ejemplo.com">
+                </div>
+                <div class="modal__actions">
+                    <button type="button" class="btn btn--secondary modal__btn-cerrar">Cancelar</button>
+                    <button type="submit" class="btn btn--primary">Enviar código</button>
+                </div>
+            </form>
         </div>
     </div>
     <script src="js/login.js"></script>
