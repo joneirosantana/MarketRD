@@ -4,7 +4,7 @@
 
 session_start();
 
-require_once __DIR__ . "/Config/database.php";
+require_once __DIR__ . '/Config/conexion.php';
 
 header("Content-Type: application/json; charset=UTF-8");
 

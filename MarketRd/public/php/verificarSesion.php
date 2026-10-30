@@ -2,7 +2,7 @@
 <?php
 
 session_start();
-
+require_once 'Config/conexion.php';
 header("Content-Type: application/json; charset=UTF-8");
 
 if (isset($_SESSION["usuario_id"])) {
