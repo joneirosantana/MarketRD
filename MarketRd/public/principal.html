@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
 </head>
+
 <body>
     <!-- ===== Header ===== -->
     <header class="header">
@@ -27,7 +29,8 @@
                 <li class="nav__item"><a href="#productos" class="nav__link">Productos</a></li>
 
                 <li class="nav__item nav__item--dropdown">
-                    <button class="nav__link nav__link--dropdown" type="button" aria-haspopup="true" aria-expanded="false">
+                    <button class="nav__link nav__link--dropdown" type="button" aria-haspopup="true"
+                        aria-expanded="false">
                         Categorías <ion-icon name="chevron-down-outline" class="nav__caret"></ion-icon>
                     </button>
                     <ul class="nav__dropdown">
@@ -58,7 +61,8 @@
                 </li>
                 <li class="nav__item nav__item--dropdown">
                     <button class="nav__link nav__link--user" type="button" aria-haspopup="true" aria-expanded="false">
-                        <ion-icon name="person-outline"></ion-icon> Mi cuenta <ion-icon name="chevron-down-outline" class="nav__caret"></ion-icon>
+                        <ion-icon name="person-outline"></ion-icon> Mi cuenta <ion-icon name="chevron-down-outline"
+                            class="nav__caret"></ion-icon>
                     </button>
                     <ul class="nav__dropdown nav__dropdown--right">
                         <li><a href="login.html" class="nav__dropdown-link">Iniciar Sesión</a></li>
@@ -93,7 +97,7 @@
             <div class="products__search-wrapper">
                 <ion-icon name="search-outline" class="products__search-icon"></ion-icon>
                 <input type="search" id="searchInput" class="products__search"
-                       placeholder="Buscar producto por nombre..." aria-label="Buscar producto">
+                    placeholder="Buscar producto por nombre..." aria-label="Buscar producto">
             </div>
 
             <select id="categoryFilter" class="products__select" aria-label="Filtrar por categoría">
@@ -114,4 +118,5 @@
     <script src="js/api.js" defer></script>
     <script src="js/principal.js" defer></script>
 </body>
+
 </html>
