@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/principal.css">
+    <link rel="stylesheet" href="style/ofertas.css">
+    <link rel="icon" href="img/LogoIcon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Ofertas - MarketRD</title>
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <!-- ===== Header ===== -->
+    <header class="header">
+        <a href="principal.html" class="header__logo-link">
+            <img src="img/LogoIcon.png" alt="Logo de MarketRD" class="logo__icon" width="50" height="50">
+            <span class="header__brand">MarketRD</span>
+        </a>
+
+        <nav class="nav nav--main">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="principal.html" class="nav__link">Inicio</a></li>
+                <li class="nav__item"><a href="catalogo.html" class="nav__link">Catálogo</a></li>
+                <li class="nav__item"><a href="principal.html#productos" class="nav__link">Productos</a></li>
+
+                <li class="nav__item nav__item--dropdown">
+                    <button class="nav__link nav__link--dropdown" type="button" aria-haspopup="true" aria-expanded="false">
+                        Categorías <ion-icon name="chevron-down-outline" class="nav__caret"></ion-icon>
+                    </button>
+                    <ul class="nav__dropdown">
+                        <li><a href="catalogo.html?cat=electrónica" class="nav__dropdown-link">Electrónica</a></li>
+                        <li><a href="catalogo.html?cat=hogar" class="nav__dropdown-link">Hogar</a></li>
+                        <li><a href="catalogo.html?cat=moda" class="nav__dropdown-link">Moda</a></li>
+                        <li><a href="catalogo.html?cat=deportes" class="nav__dropdown-link">Deportes</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav__item">
+                    <a href="ofertas.html" class="nav__link nav__link--ofertas">
+                        Ofertas <ion-icon name="flame-outline"></ion-icon>
+                    </a>
+                </li>
+                <li class="nav__item"><a href="nosotros.html" class="nav__link">Nosotros</a></li>
+                <li class="nav__item"><a href="contacto.html" class="nav__link">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <nav class="nav nav--auth">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a href="carrito.html" class="nav__link nav__link--cart" aria-label="Carrito de compras">
+                        <ion-icon name="cart-outline"></ion-icon>
+                        <span class="nav__cart-count">0</span>
+                    </a>
+                </li>
+                <li class="nav__item nav__item--dropdown">
+                    <button class="nav__link nav__link--user" type="button" aria-haspopup="true" aria-expanded="false">
+                        <ion-icon name="person-outline"></ion-icon> Mi cuenta <ion-icon name="chevron-down-outline" class="nav__caret"></ion-icon>
+                    </button>
+                    <ul class="nav__dropdown nav__dropdown--right">
+                        <li><a href="login.html" class="nav__dropdown-link">Iniciar Sesión</a></li>
+                        <li><a href="registro.html" class="nav__dropdown-link">Registrarse</a></li>
+                        <li><a href="#" class="nav__dropdown-link">Mis pedidos</a></li>
+                        <li><a href="#" class="nav__dropdown-link">Favoritos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <button class="nav__toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+            <ion-icon name="menu-outline" class="nav__toggle-icon"></ion-icon>
+        </button>
+    </header>
+
+    <!-- ===== Ofertas ===== -->
+    <main class="products" id="ofertas">
+        <h1 class="products__title">Ofertas 🔥</h1>
+        <p class="products__subtitle">Los mejores descuentos disponibles hoy</p>
+
+        <div class="products__grid" id="productsGrid"></div>
+        <p id="noResults" class="products__no-results" hidden>No hay ofertas disponibles por ahora.</p>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 MarketRD. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/api.js" defer></script>
+    <script src="js/ofertas.js" defer></script>
+</body>
+</html>
