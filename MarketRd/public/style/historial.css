@@ -1,0 +1,226 @@
+/* =========================================
+   HISTORIAL DE COMPRAS - MarketRD
+   ========================================= */
+
+/* ===== Variables (extraídas de tu imagen) ===== */
+:root {
+    --bg-color: #c1b5b5;         /* Fondo lila/beige */
+    --primary: #0753d6;          /* Azul de los botones */
+    --primary-hover: #043ba0;    /* Azul oscuro hover */
+    --footer-bg: #8b4040;        /* Rojo del footer */
+    --text-dark: #222222;
+    --text-light: #ffffff;
+}
+
+/* ===== Reset y Base ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== Header (Idéntico a tu principal) ===== */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    background-color: #ffffff;
+    padding: 0 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    color: var(--text-dark);
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.header__nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.header__nav a, .header__user a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    transition: color 0.2s;
+}
+
+.header__nav a:hover, .header__user a:hover {
+    color: var(--primary);
+}
+
+.header__user {
+    display: flex;
+    gap: 1rem;
+}
+
+/* ===== Contenido Principal ===== */
+.main-content {
+    flex: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    margin: 0 0 0.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+/* ===== Tarjeta de pedidos ===== */
+.pedidos-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    color: var(--text-dark);
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pedidos-container h2 {
+    margin-top: 0;
+    color: var(--text-dark);
+    font-size: 1.5rem;
+}
+
+.cantidad-pedidos {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== Tabla ===== */
+.tabla-contenedor {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 0.95rem;
+}
+
+th {
+    background-color: var(--primary);
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
+}
+
+tbody tr:hover {
+    background-color: #f7f9ff;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ===== Botones ===== */
+.acciones {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.boton:hover {
+    transform: translateY(-2px);
+}
+
+.boton--secondary {
+    background-color: #ffffff;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.boton--secondary:hover {
+    background-color: var(--primary);
+    color: #ffffff;
+}
+
+.boton--danger {
+    background-color: #c0392b;
+    color: #ffffff;
+}
+
+.boton--danger:hover {
+    background-color: #962d22;
+}
+
+/* ===== Footer ===== */
+.footer {
+    background-color: var(--footer-bg);
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    border-top: 1px solid #ffffff;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.footer p { margin: 0; }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    .header { flex-direction: column; height: auto; padding: 1rem; gap: 1rem; }
+    .header__nav { flex-wrap: wrap; justify-content: center; }
+    
+    .main-content { padding: 2rem 1rem; }
+    .page-title { font-size: 2rem; }
+    .pedidos-container { padding: 1.5rem; }
+    
+    .acciones { flex-direction: column; }
+    .boton { width: 100%; }
+}

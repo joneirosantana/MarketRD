@@ -4,102 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi historial de compras - MarketRD</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f4f6;
-            margin: 0;
-            color: #333;
-        }
-
-        header {
-            background-color: #1f2937;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        main {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 20px;
-        }
-
-        h2 {
-            color: #1f2937;
-        }
-
-        .tabla-contenedor {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 14px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
-
-        th {
-            background-color: #2563eb;
-            color: white;
-        }
-
-        .boton {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 18px;
-            background-color: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-        }
-
-        .boton:hover {
-            background-color: #1d4ed8;
-        }
-    </style>
+    <!-- Fuente igual a la de tu tienda -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Tu nuevo CSS separado -->
+    <link rel="stylesheet" href="style/historial.css">
 </head>
 
 <body>
-    <header>
-        <h1>MarketRD</h1>
-        <p>Mi historial de compras</p>
+    <!-- Header idéntico a la imagen (puedes cambiar el logo luego) -->
+    <header class="header">
+        <div class="header__logo">
+            <img src="img/LogoIcon.png" alt="Logo de MarketRD" width="40" height="40" onerror="this.style.display='none'">
+            <span>MarketRD</span>
+        </div>
+        <nav class="header__nav">
+            <a href="principal.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="principal.html#productos">Productos</a>
+            <a href="#">Categorías ▾</a>
+            <a href="ofertas.html">Ofertas</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+        <div class="header__user">
+            <a href="carrito.html">🛒 0</a>
+            <a href="#">👤 Mi cuenta ▾</a>
+        </div>
     </header>
 
-    <main>
-        <h2>Mis pedidos</h2>
-        <p id="cantidadPedidos"></p>
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <h1 class="page-title">MarketRD</h1>
+        <p class="page-subtitle">Mi historial de compras</p>
 
-        <div class="tabla-contenedor">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Cliente</th>
-                        <th>Dirección</th>
-                        <th>Total</th>
-                        <th>Fecha</th>
-                    </tr>
-                </thead>
+        <div class="pedidos-container">
+            <h2>Mis pedidos</h2>
+            <p id="cantidadPedidos" class="cantidad-pedidos"></p>
 
-                <tbody id="listaPedidos"></tbody>
-            </table>
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cliente</th>
+                            <th>Dirección</th>
+                            <th>Total</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaPedidos"></tbody>
+                </table>
+            </div>
+
+            <div class="acciones">
+                <a class="boton boton--secondary" href="principal.html">Volver a la tienda</a>
+                <button id="borrarHistorial" class="boton boton--danger">Borrar historial de compras</button>
+            </div>
         </div>
-
-        <a class="boton" href="principal.html">Volver a la tienda</a>
-        <button id="borrarHistorial" class="boton">
-    Borrar historial de compras
-</button>
     </main>
 
-    <script src="historial.js"></script>
+    <!-- Footer igual a la imagen -->
+    <footer class="footer">
+        <p>&copy; 2024 MarketRD. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="js/historial.js"></script>
 </body>
 </html>
