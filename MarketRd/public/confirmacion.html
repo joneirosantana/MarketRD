@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido confirmado - MarketRD</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+
+    <div class="registro-container">
+        <h1>¡Pedido realizado exitosamente!</h1>
+
+        <p>Gracias por comprar en MarketRD.</p>
+
+        <p>Tu pedido ha sido registrado correctamente.</p>
+
+        <h2>Total de tu compra</h2>
+        <p id="totalConfirmacion">RD$ 0.00</p>
+
+        <a class="boton" href="principal.html">Volver a la tienda</a>
+
+        <a class="boton" href="historial.html">Ver mis pedidos</a>
+    </div>
+
+    <script>
+        const total = localStorage.getItem("totalPedidoConfirmado");
+
+        if (total !== null) {
+            document.getElementById("totalConfirmacion").textContent =
+                "RD$ " + Number(total).toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

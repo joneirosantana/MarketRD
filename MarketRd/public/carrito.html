@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compras - MarketRD</title>
+</head>
+
+<body>
+
+    <h1>Mi carrito de compras</h1>
+    <link rel="stylesheet" href="style/style.css">
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+
+        <tbody id="productosCarrito">
+        </tbody>
+    </table>
+
+    <h2>Total: RD$ <span id="totalCarrito">0.00</span></h2>
+
+    <br>
+
+    <a href="principal.html">Continuar comprando</a>
+
+    <br><br>
+
+    <a href="checkout.html">Finalizar compra</a>
+
+
+    <button type="button" id="vaciarCarrito">Vaciar carrito</button>
+
+
+    <script src="carrito.js"></script>
+
+</body>
+
+</html>

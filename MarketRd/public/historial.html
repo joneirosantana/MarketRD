@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi historial de compras - MarketRD</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #1f2937;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #1f2937;
+        }
+
+        .tabla-contenedor {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 14px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .boton {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 18px;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .boton:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>MarketRD</h1>
+        <p>Mi historial de compras</p>
+    </header>
+
+    <main>
+        <h2>Mis pedidos</h2>
+        <p id="cantidadPedidos"></p>
+
+        <div class="tabla-contenedor">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Dirección</th>
+                        <th>Total</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+
+                <tbody id="listaPedidos"></tbody>
+            </table>
+        </div>
+
+        <a class="boton" href="principal.html">Volver a la tienda</a>
+        <button id="borrarHistorial" class="boton">
+    Borrar historial de compras
+</button>
+    </main>
+
+    <script src="historial.js"></script>
+</body>
+</html>
